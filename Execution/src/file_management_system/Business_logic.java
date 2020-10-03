@@ -41,7 +41,8 @@ public class Business_logic {
 				+ "【﻿2．】 --  【 Ｄｅｌｅｔｅ　ｅｘｉｓｔｉｎｇ　ｄｉｒｅｃｔｏｒｙ 】\n"
 				+ "【﻿3．】 --  【 ﻿Ａｄｄ　ｎｅｗ　ｆｉｌｅ 】\n"
 				+ "【﻿4．】 --  【 ﻿Search for an existing file/directory 】\n"
-				+ "【﻿5．】 --  【 ﻿Sort the file/folders 】\n");
+				+ "【﻿5．】 --  【 ﻿Sort the file/folders 】\n"
+				+ "【﻿6．】 --  【 ﻿Go to main menu 】\n");
 		int input1 = 0;
 		try {
 		 input1 = Integer.parseInt(sc.nextLine());
@@ -189,6 +190,10 @@ public class Business_logic {
 							}
 										
 			}
+			
+						else if (input1 == 6) {
+						
+					}
 			
 					
 		

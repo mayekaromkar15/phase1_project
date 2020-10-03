@@ -25,7 +25,7 @@ public class Implementor {
 					Calendar cal = Calendar.getInstance();
 					System.out.println("You logged in at "+dateFormat.format(cal.getTime()));
 					while(true) {
-					System.out.println("\nᴡʜᴀᴛ ᴡᴏᴜʟᴅ ʏᴏᴜ ʟɪᴋᴇ ᴛᴏ ᴅᴏ?\n"
+					System.out.println("\n		***Main Menu***		\n	ᴡʜᴀᴛ ᴡᴏᴜʟᴅ ʏᴏᴜ ʟɪᴋᴇ ᴛᴏ ᴅᴏ?\n"
 							+ "\n【﻿１．】 --  【﻿ Ｖｉｅｗ　ｔｈｅ　ｃｏｎｔｅｎｔｓ　ｐｒｅｓｅｎｔ　ｉｎ　ｔｈｅ　ｃｕｒｒｅｎｔ　ｄｉｒｅｃｔｏｒｙ  】\n"
 							+ "【﻿2．】 --  【 Explore other option 】\n"
 							+ "【﻿3．】 --  【 ﻿Ｅｘｉｔ 】");
