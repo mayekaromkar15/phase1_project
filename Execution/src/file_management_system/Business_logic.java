@@ -75,9 +75,28 @@ public class Business_logic {
 			String a = sc.nextLine();
 			File f = new File("D:\\Simplilearn\\Project\\Root",a);
 			if(f.exists()) {
-				f.delete();
-				System.out.println("The file/folder is successfully deleted : ");
-			}
+				System.out.println("The file you are searching for exists\n");
+				   System.out.println("Are you sure you want to delete the file/folder?"
+						+ "\n【﻿１．】 --  【﻿ YES 】\n"
+						+ "【﻿2．】 --  【NO 】\n");
+				   int promptfordelete = 0;
+					try {
+						promptfordelete = Integer.parseInt(sc.nextLine());
+					}catch (NumberFormatException e){
+						
+					}
+					if(promptfordelete == 1) {
+//						
+						System.out.println("Your folder has been successfully deleted");
+						f.delete();
+//						
+						}
+					if(promptfordelete == 2) {
+//						
+						System.out.println("Your file/folder was not deleted");
+						
+						}
+					}
 			else {
 				System.out.println("The file/folder you are searching for does not exists :");
 			}
