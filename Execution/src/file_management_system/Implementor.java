@@ -11,11 +11,11 @@ public class Implementor {
 
 			public static void main(String[] args) throws Exception{
 				Business_logic BL = new Business_logic();
-				System.out.println("               ░W░E░L░C░O░M░E░                                      ");
-
+				System.out.println("                  ░W░E░L░C░O░M░E░                                      ");
+				System.out.println("                       ░T░O░ \n░T░H░E░ ░F░I░L░E░ ░M░A░N░A░G░E░M░E░N░T░ ░S░Y░S░T░E░M░");
 				while (true) {	
 				Scanner sc = new Scanner(System.in);
-				System.out.println("\n>>> (っ◔◡◔)っ  Please enter your Username : \n");
+				System.out.println("\n>>> (っ◔◡◔)っ *** Please enter your Username ***: \n");
 				
 				String i = sc.nextLine();
 			
