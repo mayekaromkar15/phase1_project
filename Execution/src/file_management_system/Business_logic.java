@@ -39,8 +39,9 @@ public class Business_logic {
 		System.out.println("\nᴡʜᴀᴛ ᴡᴏᴜʟᴅ ʏᴏᴜ ʟɪᴋᴇ ᴛᴏ ᴅᴏ?\n"
 				+ "\n【﻿１．】 --  【﻿ Ａｄｄ　a new folder 】\n"
 				+ "【﻿2．】 --  【 Ｄｅｌｅｔｅ　ｅｘｉｓｔｉｎｇ　ｄｉｒｅｃｔｏｒｙ 】\n"
-				+ "【﻿3．】 --  【 ﻿Search for an existing file/directory 】\n"
-				+ "【﻿4．】 --  【 ﻿Sort the file/folders 】\n");
+				+ "【﻿3．】 --  【 ﻿Ａｄｄ　ｎｅｗ　ｆｉｌｅ 】\n"
+				+ "【﻿4．】 --  【 ﻿Search for an existing file/directory 】\n"
+				+ "【﻿5．】 --  【 ﻿Sort the file/folders 】\n");
 		int input1 = 0;
 		try {
 		 input1 = Integer.parseInt(sc.nextLine());
@@ -52,10 +53,10 @@ public class Business_logic {
 			System.out.println("==================================================");
 			System.out.println("Enter the name of the folder you would like to add");
 			System.out.println("==================================================");
-			String a = sc.nextLine();
+			String a = sc.nextLine().toLowerCase();
 			File f = new File("D:\\Simplilearn\\Project\\Root", a);
 			if(a.endsWith(".txt")) {
-				System.out.println("This is not a valid name of the folder");
+				System.out.println("The folder can't end with .txt");
 			}
 			else if (f.exists()){
 				System.out.println("The folder you are trying to create already exists. ");
@@ -103,7 +104,32 @@ public class Business_logic {
 			}
 			
 		
-					else if(input1 == 3) {
+			
+			else if(input1 == 3) {
+				System.out.println("==================================================");
+				System.out.println("Enter a file name  you would like to add");
+				System.out.println("==================================================");
+				String a = sc.nextLine().toLowerCase();
+				File f = new File("D:\\Simplilearn\\Project\\Root", a);
+				if (f.exists()) {
+					System.out.println("This file already exists :");
+					
+				}
+				else if(a.endsWith(".txt")) {
+					
+					f.createNewFile();
+					System.out.println("Your file has been added successfully :");
+				}
+				else {
+					System.out.println("This is not a name of valid file :");
+				}
+				
+				
+			}
+			
+			
+			
+					else if(input1 == 4) {
 			
 						File f = new File("D:\\Simplilearn\\Project\\Root");
 						String[] s = f.list();
@@ -129,7 +155,7 @@ public class Business_logic {
 		
 	}	
 
-					else if(input1 == 4) {
+					else if(input1 == 5) {
 						File f = new File("D:\\Simplilearn\\Project\\Root");
 						String[] s = f.list();
 						System.out.println("==================================================");
