@@ -28,7 +28,7 @@ public class Implementor {
 					System.out.println("\n		***Main Menu***		\n	ᴡʜᴀᴛ ᴡᴏᴜʟᴅ ʏᴏᴜ ʟɪᴋᴇ ᴛᴏ ᴅᴏ?\n"
 							+ "\n【﻿１．】 --  【﻿ Ｖｉｅｗ　ｔｈｅ　ｃｏｎｔｅｎｔｓ　ｐｒｅｓｅｎｔ　ｉｎ　ｔｈｅ　ｃｕｒｒｅｎｔ　ｄｉｒｅｃｔｏｒｙ  】\n"
 							+ "【﻿2．】 --  【 Explore other option 】\n"
-							+ "【﻿3．】 --  【 ﻿Ｅｘｉｔ 】");
+							+ "【﻿3．】 --  【 ﻿Ｅｘｉｔ 】\n");
 					int input = 0;
 					try {
 					 input = Integer.parseInt(sc.nextLine());
@@ -47,6 +47,11 @@ public class Implementor {
 					}
 					
 					else if(input == 3) {
+
+						DateFormat dateFormat1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+						Calendar cal1 = Calendar.getInstance();
+						System.out.println("You logged out at "+dateFormat1.format(cal1.getTime()));
+					
 						System.out.println("==================================================");
 						System.out.println("Thank you for using our application :");
 						System.out.println("==================================================");
@@ -59,10 +64,6 @@ public class Implementor {
 					
 				}
 
-					DateFormat dateFormat1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-					Calendar cal1 = Calendar.getInstance();
-					System.out.println("You logged out at "+dateFormat1.format(cal1.getTime()));
-				
 		}
 				
 				

@@ -57,11 +57,8 @@ public class Business_logic {
 			System.out.println("==================================================");
 			String a = sc.nextLine();
 			File f = new File("D:\\Simplilearn\\Project\\Root", a);
-			if(a.contains(".txt")||a.contains(".TXT")||
-					a.contains(".tXT")||a.contains(".txT")||
-					a.contains(".TxT")||a.contains(".txT")||
-					a.contains(".tXt")||a.contains(".TXT")||
-			        a.contains(".txt")){
+			if(a.endsWith(".txt")||a.endsWith(".TXT")||a.endsWith(".TXt")||a.endsWith(".tXT")||a.endsWith(".TxT")||a.endsWith(".Txt")||a.endsWith(".tXt")||a.endsWith(".txT"))			
+				{
 				System.out.println("The folder can't end with .txt");
 			}
 			else if (f.exists()){
@@ -70,20 +67,20 @@ public class Business_logic {
 			}
 			else {
 				f.mkdir();
-				System.out.println("Your folder has been successfully created.");
+				System.out.println("Your folder named "+a+" has been successfully created.");
 			}
 			
 		}
 		
 			else if(input1 == 2) { 
 			System.out.println("==================================================");
-			System.out.println("Which file do you want to delete ?");
-			System.out.println("==================================================");
+			System.out.println("Which file or folder do you want to delete ?");
+			System.out.println("==================================================\n");
 			String a = sc.nextLine();
 			File f = new File("D:\\Simplilearn\\Project\\Root",a);
 			if(f.exists()) {
-				System.out.println("The file you are searching for exists\n");
-				   System.out.println("Are you sure you want to delete the file/folder?"
+				System.out.println("\nThe file or folder you are searching for exists\n");
+				   System.out.println("\nAre you sure you want to delete the file/folder?"
 						+ "\n【﻿１．】 --  【﻿ YES 】\n"
 						+ "【﻿2．】 --  【NO 】\n");
 				   int promptfordelete = 0;
@@ -94,18 +91,18 @@ public class Business_logic {
 					}
 					if(promptfordelete == 1) {
 //						
-						System.out.println("Your folder has been successfully deleted");
+						System.out.println("\nYour folder has been successfully deleted");
 						f.delete();
 //						
 						}
 					if(promptfordelete == 2) {
 //						
-						System.out.println("Your file/folder was not deleted");
+						System.out.println("\nYour file/folder was not deleted");
 						
 						}
 					}
 			else {
-				System.out.println("The file/folder you are searching for does not exists :");
+				System.out.println("\nThe file/folder you are searching for does not exists :");
 			}
 			}
 			
@@ -114,39 +111,33 @@ public class Business_logic {
 			else if(input1 == 3) {
 				System.out.println("==================================================");
 				System.out.println("Enter a file name  you would like to add");
-				System.out.println("==================================================");
+				System.out.println("==================================================\n");
 				String a = sc.nextLine();
 				File f = new File("D:\\Simplilearn\\Project\\Root", a);
 				if (f.exists()) {
 					System.out.println("This file already exists :");
 					
 				}
-				else if(a.contains(".txt")||a.contains(".TXT")||
-						a.contains(".tXT")||a.contains(".txT")||
-						a.contains(".TxT")||a.contains(".txT")||
-						a.contains(".tXt")||a.contains(".TXT")||
-						a.contains(".txt")||a.contains(".TXt"))				
-						{
+				else if(a.endsWith(".txt")||a.endsWith(".TXT")||a.endsWith(".TXt")||a.endsWith(".tXT")||a.endsWith(".TxT")||a.endsWith(".Txt")||a.endsWith(".tXt")||a.endsWith(".txT"))			
+					{
 					
 					f.createNewFile();
-					System.out.println("Your file has been added successfully :");
+					System.out.println("\nYour file has been added successfully :");
 				}
 				else {
-					System.out.println("This is not a name of valid file :");
+					System.out.println("\nThis is not a name of valid file :");
 				}
 				
 				
 			}
 			
-			
-			
-					else if(input1 == 4) {
+				else if(input1 == 4) {
 			
 						File f = new File("D:\\Simplilearn\\Project\\Root");
 						String[] s = f.list();
 						System.out.println("==================================================");
 						System.out.println("Please enter the file you would like to search :");
-						System.out.println("==================================================");
+						System.out.println("==================================================\n");
 						String j = sc.nextLine().toLowerCase(); 	
 						
 						boolean b  = false;
@@ -173,7 +164,7 @@ public class Business_logic {
 						System.out.println("How would you like to sort the files/folders\n"
 						         +"【﻿1．】 --  【 ﻿Ascending 】\n"
 								+ "【﻿2．】 --  【 ﻿Descending 】");
-						System.out.println("==================================================");
+						System.out.println("==================================================\n");
 						int sort_var = 0;
 						try {
 							sort_var = Integer.parseInt(sc.nextLine());
@@ -182,21 +173,21 @@ public class Business_logic {
 						}
 						if(sort_var == 1) {
 							System.out.println("\nThe files have sorted in ascending order");
-							System.out.println("----------------------------------------------");
+							System.out.println("==================================================");
 							List<String> li = Arrays.asList(s);
 //							sut.stream();
 							List<String> ascendingsorted =li.stream().sorted(String.CASE_INSENSITIVE_ORDER).collect(Collectors.toList());
 							ascendingsorted.forEach(System.out::println);
-							System.out.println("----------------------------------------------");
+							System.out.println("==================================================\n");
 							}
 						
 						if(sort_var == 2) {
 							List<String> li = Arrays.asList(s);
 							System.out.println("\nThe files have sorted in descending order");
-							System.out.println("----------------------------------------------");
+							System.out.println("==================================================");
 							List<String> descendingsorted = li.stream().sorted(String.CASE_INSENSITIVE_ORDER.reversed()).collect(Collectors.toList()); 
 							descendingsorted.forEach(System.out::println);
-							System.out.println("----------------------------------------------");
+							System.out.println("==================================================\n");
 //							
 							}
 										
