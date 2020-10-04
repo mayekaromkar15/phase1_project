@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class Business_logic {
@@ -54,9 +55,13 @@ public class Business_logic {
 			System.out.println("==================================================");
 			System.out.println("Enter the name of the folder you would like to add");
 			System.out.println("==================================================");
-			String a = sc.nextLine().toLowerCase();
+			String a = sc.nextLine();
 			File f = new File("D:\\Simplilearn\\Project\\Root", a);
-			if(a.endsWith(".txt")) {
+			if(a.contains(".txt")||a.contains(".TXT")||
+					a.contains(".tXT")||a.contains(".txT")||
+					a.contains(".TxT")||a.contains(".txT")||
+					a.contains(".tXt")||a.contains(".TXT")||
+			        a.contains(".txt")){
 				System.out.println("The folder can't end with .txt");
 			}
 			else if (f.exists()){
@@ -110,13 +115,18 @@ public class Business_logic {
 				System.out.println("==================================================");
 				System.out.println("Enter a file name  you would like to add");
 				System.out.println("==================================================");
-				String a = sc.nextLine().toLowerCase();
+				String a = sc.nextLine();
 				File f = new File("D:\\Simplilearn\\Project\\Root", a);
 				if (f.exists()) {
 					System.out.println("This file already exists :");
 					
 				}
-				else if(a.endsWith(".txt")) {
+				else if(a.contains(".txt")||a.contains(".TXT")||
+						a.contains(".tXT")||a.contains(".txT")||
+						a.contains(".TxT")||a.contains(".txT")||
+						a.contains(".tXt")||a.contains(".TXT")||
+						a.contains(".txt")||a.contains(".TXt"))				
+						{
 					
 					f.createNewFile();
 					System.out.println("Your file has been added successfully :");
@@ -174,7 +184,8 @@ public class Business_logic {
 							System.out.println("\nThe files have sorted in ascending order");
 							System.out.println("----------------------------------------------");
 							List<String> li = Arrays.asList(s);
-							List<String> ascendingsorted = (List) li.stream().sorted().collect(Collectors.toList());
+//							sut.stream();
+							List<String> ascendingsorted =li.stream().sorted(String.CASE_INSENSITIVE_ORDER).collect(Collectors.toList());
 							ascendingsorted.forEach(System.out::println);
 							System.out.println("----------------------------------------------");
 							}
@@ -183,7 +194,7 @@ public class Business_logic {
 							List<String> li = Arrays.asList(s);
 							System.out.println("\nThe files have sorted in descending order");
 							System.out.println("----------------------------------------------");
-							List<String> descendingsorted = (List) li.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList()); 
+							List<String> descendingsorted = li.stream().sorted(String.CASE_INSENSITIVE_ORDER.reversed()).collect(Collectors.toList()); 
 							descendingsorted.forEach(System.out::println);
 							System.out.println("----------------------------------------------");
 //							

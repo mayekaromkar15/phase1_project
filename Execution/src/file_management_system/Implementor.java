@@ -58,8 +58,14 @@ public class Implementor {
 					}
 					
 				}
+
+					DateFormat dateFormat1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+					Calendar cal1 = Calendar.getInstance();
+					System.out.println("You logged out at "+dateFormat1.format(cal1.getTime()));
 				
 		}
+				
+				
 				else {
 					System.out.println("you are not a valid user :");
 				}
